@@ -1,7 +1,7 @@
 # Voting Tool for the yearly concert of the Stadtmusik Dietikon in 2019
 This repo contains a small voting tool. The code is based on the [landing page Bootstrap theme](https://startbootstrap.com/template-overviews/landing-page/).
 
-The actual code can be found in the files ```index.php``` (login by hash from ticket), ```vote.php```, ```admin.php``` and ```helpers.php```.
+The actual code can be found in the files ```index.php``` (login by hash from ticket), ```vote.php```, ```admin.php``` (presents a pie chart with the voting results) and ```helpers.php```.
 
 Everything that needs to be modified for a production environment can be found in ```helpers.php```: The database configuration, admin password (needed to view the chart with the votes), the names of the singers and the URL of the landing page for the voting tool.
 
@@ -14,3 +14,8 @@ Everything that needs to be modified for a production environment can be found i
 - ```first```, ```second```, ```third```:
   
   First, second and third priority candidate's ID. The IDs are either 0, 1, 2, 3 or 4. Double votes are not possible, i. e. ```first```, ```second``` and ```third``` contain three different IDs.
+  
+# Calculation of the score:
+- first: 3 points
+- second: 2 points
+- third: 1 point
