@@ -10,10 +10,10 @@ Everything that needs to be modified for a production environment can be found i
 | ---- | ----- | ------ | ----- |
 - ```hash```:
   
-  This number will be printed on the tickets. Each hash is unique. Initially, the other fields are empty.
+  This number will be printed on the tickets. Each hash is unique. Initially, this is the only field that is not ```NULL```.
 - ```first```, ```second```, ```third```:
   
-  First, second and third priority candidate's ID. The IDs are either 0, 1, 2, 3 or 4. Double votes are not possible, i. e. ```first```, ```second``` and ```third``` contain three different IDs.
+  First, second and third priority candidate's ID. Initially, all three fields are ```NULL```. The IDs are either 0, 1, 2, 3 or 4. Double votes are not possible, i. e. ```first```, ```second``` and ```third``` contain three different IDs.
   
 # Calculation of the score:
 - first: 3 points
