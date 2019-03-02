@@ -5,8 +5,7 @@ The actual code can be found in the files ```index.php``` (login by hash from ti
 
 Everything that needs to be modified for a production environment can be found in ```helpers.php```: The database configuration, admin password (needed to view the chart with the votes), the names of the singers and the URL of the landing page for the voting tool.
 
-# Database layout
-## Table ```hashes```
+# Database layout: Table ```hashes```
 | hash | first | second | third |
 | ---- | ----- | ------ | ----- |
 - ```hash```:
