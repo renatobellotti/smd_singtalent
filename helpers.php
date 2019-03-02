@@ -1,7 +1,7 @@
 <?php
-$servername = "mysql1.ethz.ch";
-$dbname = "renatob";
-$username = "renatob";
+$servername = "localhost";
+$dbname = "smd_singtalent";
+$username = "user";
 $password = "tYJwL2mC7aQ2NY5";
 
 $admin_password = '123456';
@@ -37,5 +37,5 @@ function correctAdminPassword($password) {
     return ($password == $admin_password);
 }
 
-$home_url = 'https://n.ethz.ch/~renatob/smd/';
+$home_url = 'localhost:8080/smd/';
 ?>
