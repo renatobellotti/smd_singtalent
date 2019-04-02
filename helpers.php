@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
 $dbname = "smd_singtalent";
-$username = "user";
-$password = "tYJwL2mC7aQ2NY5";
+$username = "myuser";
+$password = "secret";
 
 $admin_password = '123456';
 
