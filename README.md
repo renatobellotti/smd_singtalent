@@ -19,3 +19,8 @@ Everything that needs to be modified for a production environment can be found i
 - first: 3 points
 - second: 2 points
 - third: 1 point
+
+# Generating and inserting the hashes
+- Generate the hashes by running:
+```python3 generate_hashes.py```
+- Open the file ```output.sql``` in your favourite text editor, copy its content and paste it into phpMyAdmin.
