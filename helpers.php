@@ -37,5 +37,5 @@ function correctAdminPassword($password) {
     return ($password == $admin_password);
 }
 
-$home_url = 'smd-singtalent.loc:8080/smd/';
+$home_url = 'http://smd-singtalent.loc:8080/';
 ?>

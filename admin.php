@@ -43,9 +43,10 @@
           </div>
           <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
               <?php
+                $admin = false;
                 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
                     // check if somebody tried to login, but failed --> display error message
-                    if ($_GET['password'] != '') { 
+                    if (isset($_GET['password'])) { 
                         $pw = $_GET['password'];
 
                         if(!correctAdminPassword($pw)) {
