@@ -1,8 +1,8 @@
 <?php
-$servername = "localhost";
+$servername = "smd-singtalent.loc";
 $dbname = "smd_singtalent";
 $username = "myuser";
-$password = "secret";
+$password = "mypassword";
 
 $admin_password = '123456';
 
@@ -37,5 +37,5 @@ function correctAdminPassword($password) {
     return ($password == $admin_password);
 }
 
-$home_url = 'localhost:8080/smd/';
+$home_url = 'smd-singtalent.loc:8080/smd/';
 ?>

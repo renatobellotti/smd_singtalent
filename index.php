@@ -2,7 +2,7 @@
     require('helpers.php');
 
     // check if somebody tried to login
-    if ($_GET['ticket_nr'] != '') { 
+    if (isset($_GET['ticket_nr']) != '') { 
         $hash = $_GET['ticket_nr'];
 
         if(ticketExists($hash)) {
@@ -54,7 +54,7 @@
               <?php
                 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
                     // check if somebody tried to login, but failed --> display error message
-                    if ($_GET['ticket_nr'] != '') { 
+                    if (isset($_GET['ticket_nr']) != '') { 
                         $hash = $_GET['ticket_nr'];
 
                         if(!ticketExists($hash)) {
