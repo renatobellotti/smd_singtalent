@@ -67,7 +67,8 @@
                     // do we have to display a success message?
                     if(isset($_GET['success'])): ?>
                         <div class="alert alert-success" role="alert">
-                          <strong>Stimmabgabe erfolgreich!</strong> Noch einen Code benutzen?
+                          <strong>Stimmabgabe erfolgreich!</strong><br />
+                          Noch einen Code benutzen?
                         </div>
                     <?php endif;
                 }
