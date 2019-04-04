@@ -57,19 +57,19 @@
                     if (isset($_GET['ticket_nr'])) { 
                         $hash = $_GET['ticket_nr'];
 
-                        if(!ticketExists($hash)) {
-                            print "<div class=\"alert alert-danger\" role=\"alert\">
+                        if(!ticketExists($hash)): ?>
+                            <div class="alert alert-danger" role="alert">
                               <strong>Ungültiger Code</strong>
-                            </div>";
-                        }
+                            </div>
+                        <?php endif;
                     }
                     
                     // do we have to display a success message?
-                    if(isset($_GET['success'])) {
-                        print '<div class="alert alert-success" role="alert">
+                    if(isset($_GET['success'])): ?>
+                        <div class="alert alert-success" role="alert">
                           <strong>Stimmabgabe erfolgreich!</strong> Noch einen Code benutzen?
-                        </div>';
-                    }
+                        </div>
+                    <?php endif;
                 }
               ?>
               <form>

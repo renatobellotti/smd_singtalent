@@ -75,11 +75,6 @@
                     
                     $res = $conn->query("SELECT * FROM hashes WHERE first IS NULL;");
                     $open_tickets = $res->num_rows;
-                    
-                    /*for($i = 0; $i < 5; ++$i) {
-                        echo "Score of singer $i: " . $scores[$i] . "<br />";
-                    }
-                    echo "Number of open tickets: $open_tickets<br />";*/
                 }
               ?>
               
@@ -102,9 +97,8 @@
               </script>
               <?php endif; ?>
               
-              <?php
-                if(!$admin) {
-                    print '<form>
+              <?php if(!$admin): ?>
+                    <form>
                       <div class="form-row">
                         <div class="col-12 col-md-9 mb-2 mb-md-0">
                           <input type="text" id="password" name="password" class="form-control form-control-lg" placeholder="Administrator-Passwort eingeben...">
@@ -113,9 +107,8 @@
                           <button type="submit" class="btn btn-block btn-lg btn-primary">Einloggen</button>
                         </div>
                       </div>
-                      </form>';
-                }
-            ?>
+                    </form>
+              <?php endif; ?>
           </div>
         </div>
       </div>

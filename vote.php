@@ -19,8 +19,6 @@
                 // valid vote
                 
                 // save the vote
-                
-                
                 if(saveVote($_GET['first'], $_GET['second'], $_GET['third'], $_GET['ticket_nr'])) {
                     header('Location: ' . $home_url . '?success=1');
                     die();
@@ -74,26 +72,24 @@
             <h1 class="mb-5">Dietiker Singtalent</h1>
           </div>
           <div class="col-md-12 col-lg-12 col-xl-12 mx-auto">
-              <?php
-                if(isset($not_all_set)){
-                    print "<div class=\"alert alert-danger\" role=\"alert\">
-                              <strong>Bitte alle Prioritäten angeben!</strong>
-                            </div>";
-                }
+            <?php if(isset($not_all_set)): ?>
+              <div class="alert alert-danger" role="alert">
+                <strong>Bitte alle Prioritäten angeben!</strong>
+              </div>
+            <?php endif; ?>
                 
-                if(isset($duplicates)){
-                    print "<div class=\"alert alert-danger\" role=\"alert\">
-                              <strong>Nur eine Stimme pro KandidatIn erlaubt!</strong>
-                            </div>";
-                }
-                
-                if(isset($save_failed)){
-                    print "<div class=\"alert alert-danger\" role=\"alert\">
-                              <strong>Es gab einen Fehler beim Speichern. Bitte nochmal versuchen!</strong>
-                            </div>";
-                }
-                
-              ?>
+            <?php if(isset($duplicates)): ?>
+                <div class="alert alert-danger" role="alert">
+                    <strong>Nur eine Stimme pro KandidatIn erlaubt!</strong>
+                </div>
+            <?php endif; ?>
+            
+            <?php if(isset($save_failed)): ?>
+                <div class="alert alert-danger" role="alert">
+                    <strong>Es gab einen Fehler beim Speichern. Bitte nochmal versuchen!</strong>
+                </div>
+            <?php endif; ?>
+
               <form>
                 <input type="hidden" name="ticket_nr" value="<?php echo $_GET['ticket_nr']; ?>" /> <!-- needed to prove that the hash is still valid -->
                 <fieldset>
