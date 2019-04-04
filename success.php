@@ -1,17 +1,5 @@
 <?php
     require('helpers.php');
-
-    // check if somebody tried to login
-    if (isset($_GET['ticket_nr'])) { 
-        $hash = $_GET['ticket_nr'];
-
-        if(ticketExists($hash)) {
-            // successful login --> redirect to voting page
-            $url = $home_url . 'vote.php?ticket_nr=' . $hash;
-            header('Location: ' . $url);
-            die();
-        }
-    }
 ?>
 
 
@@ -51,32 +39,34 @@
             <h1 class="mb-5">Dietiker Singtalent</h1>
           </div>
           <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-              <?php
-                if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-                    // check if somebody tried to login, but failed --> display error message
-                    if (isset($_GET['ticket_nr'])) { 
-                        $hash = $_GET['ticket_nr'];
-
-                        if(!ticketExists($hash)): ?>
-                            <div class="alert alert-danger" role="alert">
-                              <strong>Ungültiger Code</strong>
-                            </div>
-                        <?php endif;
-                    }
-                }
-              ?>
+            <?php if(isset($_GET['success'])): ?>
+              <div class="alert alert-success" role="alert">
+                <strong>Stimmabgabe erfolgreich!</strong><br />
+              </div>
+            <?php endif; ?>
+            
+            <div class="col-12 col-md-9 mb-2 mx-auto">
+                <strong>Möchten sie gerne über die Stadtmusik Dietikon auf dem Laufenden gehalten werden?</strong>
+            </div>
+              
               <form>
               <div class="form-row">
-                <div class="col-12 col-md-9 mb-2 mb-md-0">
-                  <input type="text" id="ticket_nr" name="ticket_nr" class="form-control form-control-lg" placeholder="Ticket-Nr. eingeben...">
+                <div class="col-12">
+                  <input type="email" id="email" name="email" class="form-control form-control-lg" placeholder="E-Mail Adresse">
                 </div>
-                <div class="col-12 col-md-3">
-                  <button type="submit" class="btn btn-block btn-lg btn-primary">Abstimmen</button>
+                
+                <div class="col-12 my-2">
+                  <input type="submit" class="btn btn-block btn-lg btn-primary" id="newsletter" name="newsletter" value="Newsletter abonnieren" />
                 </div>
               </div>
               </form>
             
           </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10 col-lg-8 col-xl-7 mx-auto my-auto">
+              <button type="submit" class="btn btn-block btn-lg btn-info" id="code" name="code">Noch einen Code einlösen</button>
+            </div>
         </div>
       </div>
     </header>

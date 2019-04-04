@@ -20,7 +20,7 @@
                 
                 // save the vote
                 if(saveVote($_GET['first'], $_GET['second'], $_GET['third'], $_GET['ticket_nr'])) {
-                    header('Location: ' . $home_url . '?success=1');
+                    header('Location: ' . $home_url . 'success.php?success=1');
                     die();
                 }else{
                     $save_failed = true;
