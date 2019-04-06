@@ -42,6 +42,18 @@ function saveEmailAddress($address) {
     $address = $conn->escape_string($address);
     $sql = "INSERT INTO `emails` (`email_address`) VALUES ('$address');";
     $conn->query($sql);
+    
+    // send confirmation email
+    $msg = "Sehr geehrte Zuhörerin, sehr geehrter Zuhörer
+    
+    Sie haben sich soeben erfolgreich für unseren Newsletter eingetragen.
+    Es freut uns sehr, dass sie auch in Zukunft über die Stadtmusik Dietikon informiert bleiben möchten.
+    
+    Weiterhin viel Spass beim Konzert wünscht ihnen die
+    Stadtmusik Dietikon";
+    $subject = "Newsletter-Registrierung SMD";
+    mail($address, $subject, $msg);
+    
 }
 
 
