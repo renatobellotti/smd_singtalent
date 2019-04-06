@@ -1,5 +1,22 @@
 <?php
     require('helpers.php');
+    
+    // check if an email address has been entered in the form
+    if(isset($_GET['email'])) {
+        // check validity of the email address
+        if(filter_var($_GET['email'], FILTER_VALIDATE_EMAIL)) {
+            $valid_email = true;
+            saveEmailAddress($_GET['email']);
+        }else{
+            $valid_email = false;
+        }
+    }
+    
+    // check if the user wants to enter another code
+    if(isset($_GET['code'])) {
+        header('Location: ' . $home_url);
+        die();
+    }
 ?>
 
 
@@ -32,7 +49,6 @@
 
     <!-- Masthead -->
     <header class="masthead text-white text-center">
-      <div class="overlay"></div>
       <div class="container">
         <div class="row">
           <div class="col-xl-9 mx-auto">
@@ -42,6 +58,18 @@
             <?php if(isset($_GET['success'])): ?>
               <div class="alert alert-success" role="alert">
                 <strong>Stimmabgabe erfolgreich!</strong><br />
+              </div>
+            <?php endif; ?>
+            
+            <?php if(isset($valid_email) && $valid_email): ?>
+              <div class="alert alert-success" role="alert">
+                <strong>E-Mail-Adresse erfolgreich gespeichert!</strong><br />
+              </div>
+            <?php endif; ?>
+            
+            <?php if(isset($valid_email) && !$valid_email): ?>
+              <div class="alert alert-danger" role="alert">
+                <strong>Ungültige E-Mail-Adresse.</strong><br />
               </div>
             <?php endif; ?>
             
@@ -63,11 +91,13 @@
             
           </div>
         </div>
-        <div class="row">
+        <form>
+          <div class="row">
             <div class="col-md-10 col-lg-8 col-xl-7 mx-auto my-auto">
               <button type="submit" class="btn btn-block btn-lg btn-info" id="code" name="code">Noch einen Code einlösen</button>
             </div>
-        </div>
+          </div>
+        </form>
       </div>
     </header>
 

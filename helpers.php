@@ -37,5 +37,13 @@ function correctAdminPassword($password) {
     return ($password == $admin_password);
 }
 
+function saveEmailAddress($address) {
+    global $conn;
+    $address = $conn->escape_string($address);
+    $sql = "INSERT INTO `emails` (`email_address`) VALUES ('$address');";
+    $conn->query($sql);
+}
+
+
 $home_url = 'http://smd-singtalent.loc:8080/';
 ?>
