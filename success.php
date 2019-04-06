@@ -43,6 +43,13 @@
     <!-- Custom styles for this template -->
     <link href="css/landing-page.css" rel="stylesheet">
 
+    <!-- Add this only to the index.php and header.php page -->
+    <style>
+        header.masthead {
+          height: 100%;
+        }
+    </style>
+
   </head>
 
   <body>
@@ -61,6 +68,10 @@
               </div>
             <?php endif; ?>
             
+            <div class="col-12 col-md-9 mb-2 mx-auto">
+                <strong>Möchten sie gerne über die Stadtmusik Dietikon auf dem Laufenden gehalten werden?</strong>
+            </div>
+            
             <?php if(isset($valid_email) && $valid_email): ?>
               <div class="alert alert-success" role="alert">
                 <strong>E-Mail-Adresse erfolgreich gespeichert!</strong><br />
@@ -72,10 +83,6 @@
                 <strong>Ungültige E-Mail-Adresse.</strong><br />
               </div>
             <?php endif; ?>
-            
-            <div class="col-12 col-md-9 mb-2 mx-auto">
-                <strong>Möchten sie gerne über die Stadtmusik Dietikon auf dem Laufenden gehalten werden?</strong>
-            </div>
               
               <form>
               <div class="form-row">

@@ -37,6 +37,13 @@
 
     <!-- Custom styles for this template -->
     <link href="css/landing-page.css" rel="stylesheet">
+    
+    <!-- Add this only to the index.php and header.php page -->
+    <style>
+        header.masthead {
+          height: 100%;
+        }
+    </style>
 
   </head>
 
