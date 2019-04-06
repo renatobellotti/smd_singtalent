@@ -6,7 +6,7 @@ import string
 N = 1000
 # number of characters per hash
 numCharPerHash = 4
-outputFileName = 'output.sql'
+outputFileName = 'output'
 
 # code taken from:
 # https://stackoverflow.com/questions/2257441/random-string-generation-with-upper-case-letters-and-digits?rq=1
@@ -16,9 +16,11 @@ while len(hashes) < N:
     candidate = ''.join(digits)
     hashes.add(candidate)
 
-# output to terminal
-for h in hashes:
-    print(h)
+# output to terminal and text file
+with open(outputFileName + '.txt', 'w') as file:
+    for h in hashes:
+        file.write(h + '\n')
+        print(h)
 
 # SQL command:
 # INSERT INTO [TABLE] ([COLUMN_NAME]) VALUES (VAL1), (VAL2), (VAL3)
@@ -28,5 +30,5 @@ valueString = ',\n'.join(strings)
 sql = 'INSERT INTO hashes (hash) VALUES {};'.format(valueString)
 
 # output to file
-with open(outputFileName, 'w') as file:
+with open(outputFileName + '.sql', 'w') as file:
     file.write(sql)
