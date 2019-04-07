@@ -93,27 +93,27 @@
                 <input type="hidden" name="ticket_nr" value="<?php echo $_GET['ticket_nr']; ?>" /> <!-- needed to prove that the hash is still valid -->
                 <fieldset>
                     <h2>Erste Wahl:</h2>
-                    <input type="radio" name="first" id="0" value="0"><label for="0">KandidatIn 0</label><br />
-                    <input type="radio" name="first" id="1" value="1"><label for="1">KandidatIn 1</label><br />
-                    <input type="radio" name="first" id="2" value="2"><label for="2">KandidatIn 2</label><br />
-                    <input type="radio" name="first" id="3" value="3"><label for="3">KandidatIn 3</label><br />
-                    <input type="radio" name="first" id="4" value="4"><label for="4">KandidatIn 4</label><br />
+                    <?php foreach($singers as $index=>$name)
+                        {
+                            echo '<input type="radio" name="first" id="' . $index . '" value="'. $index . '"><label for="' . $index . '0">' . $name . '</label><br />';
+                        }
+                    ?>
                 </fieldset>
                 <fieldset>
                     <h2>Zweite Wahl:</h2>
-                    <input type="radio" name="second" id="0" value="0"><label for="0">KandidatIn 0</label><br />
-                    <input type="radio" name="second" id="1" value="1"><label for="1">KandidatIn 1</label><br />
-                    <input type="radio" name="second" id="2" value="2"><label for="2">KandidatIn 2</label><br />
-                    <input type="radio" name="second" id="3" value="3"><label for="3">KandidatIn 3</label><br />
-                    <input type="radio" name="second" id="4" value="4"><label for="4">KandidatIn 4</label><br />
+                    <?php foreach($singers as $index=>$name)
+                        {
+                            echo '<input type="radio" name="second" id="' . $index . '" value="'. $index . '"><label for="' . $index . '0">' . $name . '</label><br />';
+                        }
+                    ?>
                 </fieldset>
                 <fieldset>
                     <h2>Dritte Wahl:</h2>
-                    <input type="radio" name="third" id="0" value="0"><label for="0">KandidatIn 0</label><br />
-                    <input type="radio" name="third" id="1" value="1"><label for="1">KandidatIn 1</label><br />
-                    <input type="radio" name="third" id="2" value="2"><label for="2">KandidatIn 2</label><br />
-                    <input type="radio" name="third" id="3" value="3"><label for="3">KandidatIn 3</label><br />
-                    <input type="radio" name="third" id="4" value="4"><label for="4">KandidatIn 4</label><br />
+                    <?php foreach($singers as $index=>$name)
+                        {
+                            echo '<input type="radio" name="third" id="' . $index . '" value="'. $index . '"><label for="' . $index . '0">' . $name . '</label><br />';
+                        }
+                    ?>
                 </fieldset>
                 <div class="col-12 col-md-12">
                   <button type="submit" class="btn btn-block btn-lg btn-primary" name="vote" value="vote">Speichern</button>

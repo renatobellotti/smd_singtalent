@@ -6,7 +6,7 @@ $password = "mypassword";
 
 $admin_password = '123456';
 
-$singers = array("KandidatinIn 0", "KandidatIn 1", "KandidatIn 2", "KandidatIn 3", "KandidatIn 4");
+$singers = array("KandidatIn 0", "KandidatIn 1", "KandidatIn 2", "KandidatIn 3", "KandidatIn 4");
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -18,7 +18,7 @@ if ($conn->connect_error) {
 function ticketExists($hash) {
     global $conn;
     $res = $conn->query("SELECT * FROM hashes WHERE hash='" . $conn->escape_string($hash) . "' AND first IS NULL;");
-    return mysqli_num_rows($res) != 0;
+    return mysqli_num_rows($res) > 0;
 }
 
 function saveVote($first, $second, $third, $hash) {
