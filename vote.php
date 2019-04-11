@@ -95,7 +95,7 @@
                     <h2>Erste Wahl:</h2>
                     <?php foreach($singers as $index=>$name)
                         {
-                            echo '<input type="radio" name="first" id="' . $index . '" value="'. $index . '"><label for="' . $index . '0">' . $name . '</label><br />';
+                            echo '<input type="radio" name="first" id="' . $index . '" value="'. $index . '"><label for="' . $index . '">' . $name . '</label><br />';
                         }
                     ?>
                 </fieldset>
@@ -103,7 +103,7 @@
                     <h2>Zweite Wahl:</h2>
                     <?php foreach($singers as $index=>$name)
                         {
-                            echo '<input type="radio" name="second" id="' . $index . '" value="'. $index . '"><label for="' . $index . '0">' . $name . '</label><br />';
+                            echo '<input type="radio" name="second" id="' . $index . '" value="'. $index . '"><label for="' . $index . '">' . $name . '</label><br />';
                         }
                     ?>
                 </fieldset>
@@ -111,7 +111,7 @@
                     <h2>Dritte Wahl:</h2>
                     <?php foreach($singers as $index=>$name)
                         {
-                            echo '<input type="radio" name="third" id="' . $index . '" value="'. $index . '"><label for="' . $index . '0">' . $name . '</label><br />';
+                            echo '<input type="radio" name="third" id="' . $index . '" value="'. $index . '"><label for="' . $index . '">' . $name . '</label><br />';
                         }
                     ?>
                 </fieldset>
