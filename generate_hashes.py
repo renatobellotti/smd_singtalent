@@ -5,19 +5,19 @@ import string
 # number of unique hashes to be generated
 N = 1000
 # number of characters per hash
-numCharPerHash = 4
+numCharPerHash = 6
 outputFileName = 'output'
 
 # code taken from:
 # https://stackoverflow.com/questions/2257441/random-string-generation-with-upper-case-letters-and-digits?rq=1
 hashes = set([])
 while len(hashes) < N:
-    digits = random.choices(string.ascii_uppercase + string.digits, k=numCharPerHash)
+    digits = random.choices(string.ascii_lowercase + string.digits, k=numCharPerHash)
     candidate = ''.join(digits)
     hashes.add(candidate)
 
 # output to terminal and text file
-with open(outputFileName + '.txt', 'w') as file:
+with open(outputFileName + '.csv', 'w') as file:
     for h in hashes:
         file.write(h + '\n')
         print(h)
