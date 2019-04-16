@@ -6,7 +6,7 @@ $password = "mypassword";
 
 $admin_password = '123456';
 
-$singers = array("Ueli", "Lisi", "King Kong", "D\'Artagnan", "Fettsack");
+$singers = array("John Cleese", "Terry Gilliam ", "Eric Idle", "Terry Jones", "Michael Palin");
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
