@@ -45,12 +45,12 @@ function saveEmailAddress($address) {
     
     // send confirmation email
     $msg = "Sehr geehrte Zuhörerin, sehr geehrter Zuhörer
-    
-    Sie haben sich soeben erfolgreich für unseren Newsletter eingetragen.
-    Es freut uns sehr, dass sie auch in Zukunft über die Stadtmusik Dietikon informiert bleiben möchten.
-    
-    Weiterhin viel Spass beim Konzert wünscht ihnen die
-    Stadtmusik Dietikon";
+
+Sie haben sich soeben erfolgreich für unseren Newsletter eingetragen.
+Es freut uns sehr, dass sie auch in Zukunft über die Stadtmusik Dietikon informiert bleiben möchten.
+
+Weiterhin viel Spass beim Konzert wünscht ihnen die
+Stadtmusik Dietikon";
     $subject = "Newsletter-Registrierung SMD";
     mail($address, $subject, $msg);
     
