@@ -64,27 +64,27 @@
   <body>
 
     <!-- Masthead -->
-    <header class="masthead text-white text-center">
+    <header class="masthead text-white">
       <div class="container">
         <div class="row">
           <div class="col-xl-9 mx-auto">
-            <h1 class="mb-5">Dietiker Singtalent</h1>
+            <div class="text-center"><h1 class="mb-5">Dietiker Singtalent</h1></div>
           </div>
           <div class="col-md-12 col-lg-12 col-xl-12 mx-auto">
             <?php if(isset($not_all_set)): ?>
-              <div class="alert alert-danger" role="alert">
+              <div class="alert alert-danger text-center" role="alert">
                 <strong>Bitte alle Prioritäten angeben!</strong>
               </div>
             <?php endif; ?>
                 
             <?php if(isset($duplicates)): ?>
-                <div class="alert alert-danger" role="alert">
+                <div class="alert alert-danger text-center" role="alert">
                     <strong>Nur eine Stimme pro KandidatIn erlaubt!</strong>
                 </div>
             <?php endif; ?>
             
             <?php if(isset($save_failed)): ?>
-                <div class="alert alert-danger" role="alert">
+                <div class="alert alert-danger text-center" role="alert">
                     <strong>Es gab einen Fehler beim Speichern. Bitte nochmal versuchen!</strong>
                 </div>
             <?php endif; ?>
@@ -92,26 +92,29 @@
               <form>
                 <input type="hidden" name="ticket_nr" value="<?php echo $_GET['ticket_nr']; ?>" /> <!-- needed to prove that the hash is still valid -->
                 <fieldset>
-                    <h2>Erste Wahl:</h2>
+                    <div class="text-center"><h2>Erste Wahl:</h2></div>
                     <?php foreach($singers as $index=>$name)
                         {
-                            echo '<input type="radio" name="first" id="' . $index . '" value="'. $index . '"><label for="' . $index . '">' . $name . '</label><br />';
+                            echo '<input type="radio" name="first" id="1' . $index . '" value="'. $index . '"><label for="1' . $index . '">' . $name . '</label><br/>';
+                            echo '<div class="col-sx-6 mx-auto text-center"><img class=img-responsive" src="img/candidates/' . $index . '.jpg"></div><br/>';
                         }
                     ?>
                 </fieldset>
                 <fieldset>
-                    <h2>Zweite Wahl:</h2>
+                    <div class="text-center"><h2>Zweite Wahl:</h2></div>
                     <?php foreach($singers as $index=>$name)
                         {
-                            echo '<input type="radio" name="second" id="' . $index . '" value="'. $index . '"><label for="' . $index . '">' . $name . '</label><br />';
+                            echo '<input type="radio" name="second" id="2' . $index . '" value="'. $index . '"><label for="2' . $index . '">' . $name . '</label><br />';
+                            echo '<div class="col-sx-6 mx-auto text-center"><img class=img-responsive" src="img/candidates/' . $index . '.jpg"></div><br/>';
                         }
                     ?>
                 </fieldset>
                 <fieldset>
-                    <h2>Dritte Wahl:</h2>
+                    <div class="text-center"><h2>Dritte Wahl:</h2></div>
                     <?php foreach($singers as $index=>$name)
                         {
-                            echo '<input type="radio" name="third" id="' . $index . '" value="'. $index . '"><label for="' . $index . '">' . $name . '</label><br />';
+                            echo '<input type="radio" name="third" id="3' . $index . '" value="'. $index . '"><label for="3' . $index . '">' . $name . '</label><br />';
+                            echo '<div class="col-sx-6 mx-auto text-center"><img class=img-responsive" src="img/candidates/' . $index . '.jpg"></div><br/>';
                         }
                     ?>
                 </fieldset>

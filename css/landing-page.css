@@ -130,3 +130,8 @@ footer.footer {
   padding-top: 4rem;
   padding-bottom: 4rem;
 }
+
+img {
+    width: 75%;
+    height: auto;
+}

@@ -63,23 +63,23 @@
           </div>
           <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
             <?php if(isset($_GET['success'])): ?>
-              <div class="alert alert-success" role="alert">
+              <div class="alert alert-success text-center" role="alert">
                 <strong>Stimmabgabe erfolgreich!</strong><br />
               </div>
             <?php endif; ?>
             
-            <div class="col-12 col-md-9 mb-2 mx-auto">
+            <div class="col-12 col-md-9 mb-2 mx-auto text-warning">
                 <strong>Möchten sie gerne über die Stadtmusik Dietikon auf dem Laufenden gehalten werden?</strong>
             </div>
             
             <?php if(isset($valid_email) && $valid_email): ?>
-              <div class="alert alert-success" role="alert">
+              <div class="alert alert-success text-center" role="alert">
                 <strong>E-Mail-Adresse erfolgreich gespeichert!</strong><br />
               </div>
             <?php endif; ?>
             
             <?php if(isset($valid_email) && !$valid_email): ?>
-              <div class="alert alert-danger" role="alert">
+              <div class="alert alert-danger text-center" role="alert">
                 <strong>Ungültige E-Mail-Adresse.</strong><br />
               </div>
             <?php endif; ?>
