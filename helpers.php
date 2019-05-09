@@ -6,7 +6,7 @@ $password = "mypassword";
 
 $admin_password = '123456';
 
-$singers = array("Dan Paulweber (It's a Man's World)", "Luca Zwyssig (Feeling Good)", "Sandra Latorre (La Vie en Rose)", "Urs Busslinger (Moon over Bourbon Street)", "Désirée Vannaz (Set Fire to the Rain)");
+$singers = array("Martina Meier (Hallelujah I just love hom so)", "Luca Zwyssig (Feeling Good)", "Sandra Latorre (La Vie en Rose)", "Urs Busslinger (Moon over Bourbon Street)", "Désirée Vannaz (Set Fire to the Rain)");
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
