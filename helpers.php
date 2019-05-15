@@ -46,6 +46,10 @@ function saveEmailAddress($address) {
     $conn->query($sql);
     
     // send confirmation email
+    // see:
+    // https://www.php-kurs.com/email-per-php.htm
+    $headers = "Mime-Version: 1.0\r\nContent-Type: text/plain; charset=utf-8\r\nContent-Transfer-Encoding: quoted-printable";
+    
     $msg = "Sehr geehrte Zuhörerin, sehr geehrter Zuhörer
 
 Sie haben sich soeben erfolgreich für unseren Newsletter eingetragen.
@@ -54,7 +58,7 @@ Es freut uns sehr, dass sie auch in Zukunft über die Stadtmusik Dietikon inform
 Weiterhin viel Spass beim Konzert wünscht ihnen die
 Stadtmusik Dietikon";
     $subject = "Newsletter-Registrierung SMD";
-    mail($address, $subject, $msg);
+    mail($address, $subject, $msg, $headers);
     
 }
 
