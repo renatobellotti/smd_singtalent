@@ -16,12 +16,14 @@ if ($conn->connect_error) {
 }
 
 function ticketExists($hash) {
+    $hash = strtolower(trim($hash));
     global $conn;
     $res = $conn->query("SELECT * FROM hashes WHERE hash='" . $conn->escape_string($hash) . "' AND first IS NULL;");
     return mysqli_num_rows($res) > 0;
 }
 
 function saveVote($first, $second, $third, $hash) {
+    $hash = strtolower(trim($hash));
     global $conn;
     $first = $conn->escape_string($first);
     $second = $conn->escape_string($second);
