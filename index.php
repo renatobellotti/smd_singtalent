@@ -74,7 +74,7 @@
               <form>
               <div class="form-row">
                 <div class="col-12 col-md-9 mb-2 mb-md-0">
-                  <input type="text" id="ticket_nr" name="ticket_nr" class="form-control form-control-lg" placeholder="Voting Code eingeben...">
+                  <input type="text" id="ticket_nr" name="ticket_nr" class="form-control form-control-lg" placeholder="Abstimmungscode eingeben...">
                 </div>
                 <div class="col-12 col-md-3">
                   <button type="submit" class="btn btn-block btn-lg btn-primary">Abstimmen</button>

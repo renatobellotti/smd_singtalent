@@ -92,7 +92,7 @@
               <form>
                 <input type="hidden" name="ticket_nr" value="<?php echo $_GET['ticket_nr']; ?>" /> <!-- needed to prove that the hash is still valid -->
                 <fieldset>
-                    <div class="text-center"><h2>Erste Wahl:</h2></div>
+                    <div class="text-center"><h2>1. Platz:</h2></div>
                     <?php foreach($singers as $index=>$name)
                         {
                             echo '<input type="radio" name="first" id="1' . $index . '" value="'. $index . '"><label for="1' . $index . '">' . $name . '</label><br/>';
@@ -101,7 +101,7 @@
                     ?>
                 </fieldset>
                 <fieldset>
-                    <div class="text-center"><h2>Zweite Wahl:</h2></div>
+                    <div class="text-center"><h2>2. Platz:</h2></div>
                     <?php foreach($singers as $index=>$name)
                         {
                             echo '<input type="radio" name="second" id="2' . $index . '" value="'. $index . '"><label for="2' . $index . '">' . $name . '</label><br />';
@@ -110,7 +110,7 @@
                     ?>
                 </fieldset>
                 <fieldset>
-                    <div class="text-center"><h2>Dritte Wahl:</h2></div>
+                    <div class="text-center"><h2>3. Platz:</h2></div>
                     <?php foreach($singers as $index=>$name)
                         {
                             echo '<input type="radio" name="third" id="3' . $index . '" value="'. $index . '"><label for="3' . $index . '">' . $name . '</label><br />';
@@ -119,7 +119,7 @@
                     ?>
                 </fieldset>
                 <div class="col-12 col-md-12">
-                  <button type="submit" class="btn btn-block btn-lg btn-primary" name="vote" value="vote">Speichern</button>
+                  <button type="submit" class="btn btn-block btn-lg btn-primary" name="vote" value="vote">Senden</button>
                 </div>
               </form>
             
