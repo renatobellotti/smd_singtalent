@@ -62,7 +62,6 @@
                 if($admin) {
                     // count the number of points for each candidate
                     $scores = array(0, 0, 0, 0, 0);
-                    $open_tickets = 0;
                     
                     $res = $conn->query("SELECT first, second, third FROM hashes WHERE first IS NOT NULL;");
                     $res->data_seek(0);
@@ -72,9 +71,6 @@
                         $scores[intval($row['second'])] += 2;
                         $scores[intval($row['third'])] += 1;
                     }
-                    
-                    $res = $conn->query("SELECT * FROM hashes WHERE first IS NULL;");
-                    $open_tickets = $res->num_rows;
                 }
               ?>
               
@@ -83,14 +79,17 @@
               
               <script>
                 var data = [{
-                    values: [<?php foreach($scores as $score){ echo "$score, "; } echo 5*$open_tickets; ?>],
-                    labels: [<?php foreach($singers as $singer){ echo "'$singer', "; } echo "'Nicht eingelöst'"; ?>],
+                    values: [<?php foreach($scores as $score){ echo "$score, "; } ?>],
+                    labels: [<?php foreach($singers as $singer){ echo "'$singer', "; } ?>],
                     type: 'pie'
                 }];
                 
                 var layout = {
-                  height: 400,
-                  width: 500
+                  height: 600,
+                  width: 380,
+                  legend: {
+                    x: 1,
+                  }
                 };
                 
                 Plotly.newPlot('plotDiv', data, layout);
